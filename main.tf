@@ -14,7 +14,7 @@ data "aws_ami" "app_ami" {
   owners = ["663770316195"] # Rodney Terraform Test
 }
 
-resource "aws_instance" "web" {
+resource "aws_instance" "blog" {
   ami           = data.aws_ami.app_ami.id
   instance_type = var.instance_type
 
