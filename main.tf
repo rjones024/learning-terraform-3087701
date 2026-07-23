@@ -78,8 +78,6 @@ module "blog-alb" {
     }
   }
 
-  
-
   tags = {
     Environment = "dev"  
   }
