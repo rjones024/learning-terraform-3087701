@@ -73,7 +73,7 @@ module "blog-alb" {
       port     = 80
       protocol = "HTTP"
       forward = {
-        target_group_arn =aws_alb_target_group.blog.arn
+        target_group_arn =aws_lb_target_group.blog.arn
       }
     }
   }
@@ -92,7 +92,7 @@ resource "aws_lb_target_group" "blog" {
   vpc_id   = module.blog_vpc.vpc_id
 }
 
-resource "aws_lb_target_group_attachment" "blog" {
+resource "aws_alb_target_group_attachment" "blog" {
   target_group_arn = aws_lb_target_group.blog.arn
   target_id        = aws_instance.blog.id
   port             = 80
