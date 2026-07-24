@@ -78,7 +78,7 @@ resource "aws_lb_target_group" "blog" {
   vpc_id   = module.blog_vpc.vpc_id
 }
 
-resource "aws_alb_target_group_attachment" "blog" {
+resource "aws_lb_target_group_attachment" "blog" {
   target_group_arn = aws_lb_target_group.blog.arn
   target_id        = aws_instance.blog.id
   port             = 80
@@ -92,7 +92,7 @@ module "blog_autoscaling" {
   min_size = 1
   max_size = 2
 
-  vpc_zone_identifier = moudule.blog_vpc.public_subnets
+  vpc_zone_identifier = module.blog_vpc.public_subnets
 
   launch_template_name = "blog"
   security_groups      = [module.blog_sg.security_group_id]
