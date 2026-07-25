@@ -14,7 +14,6 @@ variable "ami_filter" {
     owner = "663770316195"
   }
 }
-
  
 variable "environment" {
   description = "deployment environment"
