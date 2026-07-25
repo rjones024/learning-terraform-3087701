@@ -19,7 +19,7 @@ variable "environment" {
   description = "deployment environment"
   type = object ({
     name           = string
-    netowrk_prefix = string
+    network_prefix = string
   })
   default = {
     name           = "dev"
