@@ -27,7 +27,7 @@ module "blog_vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
   name = var.environment.name
-  cidr = "${var.environment.netowrk_prefix}.0.0/16"
+  cidr = "${var.environment.network_prefix}.0.0/16"
 
   azs             = ["us-east-1a", "us-east-1b", "us-east-1c"]
   private_subnets = ["${var.environment.network_prefix}.1.0/24", "${var.environment.network_prefix}.2.0/24", "${var.environment.network_prefix}.3.0/24"]
